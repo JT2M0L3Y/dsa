@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Java
+*.class
+
+# C/C++
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+
+# IDE/editor noise
+.vscode/
+.idea/
+.DS_Store
+
+# Build artifacts
+build/
+dist/
+*.log
