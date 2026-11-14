@@ -62,7 +62,9 @@ class DijkstraExample {
             long[] current = frontier.remove();
             long cost = current[0];
             int node = (int) current[1];
-            if (cost != distance[node]) continue;
+            if (cost != distance[node]) {
+                continue;
+            }
             for (int[] edge : graph.get(node)) {
                 int neighbor = edge[0], weight = edge[1];
                 long candidate = cost + weight;
@@ -77,10 +79,14 @@ class DijkstraExample {
 
     public static void main(String[] args) {
         List<List<int[]>> graph = new ArrayList<>();
-        for (int i = 0; i < 4; i++) graph.add(new ArrayList<>());
-        graph.get(0).add(new int[]{1, 4}); graph.get(0).add(new int[]{2, 1});
+        for (int i = 0; i < 4; i++) {
+            graph.add(new ArrayList<>());
+        }
+        graph.get(0).add(new int[]{1, 4});
+        graph.get(0).add(new int[]{2, 1});
         graph.get(1).add(new int[]{3, 1});
-        graph.get(2).add(new int[]{1, 2}); graph.get(2).add(new int[]{3, 5});
+        graph.get(2).add(new int[]{1, 2});
+        graph.get(2).add(new int[]{3, 5});
         System.out.println(Arrays.toString(dijkstra(graph, 0)));
     }
 }
@@ -107,7 +113,9 @@ std::vector<long long> dijkstra(const std::vector<std::vector<std::pair<int, int
     while (!frontier.empty()) {
         auto [cost, node] = frontier.top();
         frontier.pop();
-        if (cost != distance[node]) continue;
+        if (cost != distance[node]) {
+            continue;
+        }
         for (auto [neighbor, weight] : graph[node]) {
             long long candidate = cost + weight;
             if (candidate < distance[neighbor]) {
@@ -124,7 +132,9 @@ int main() {
     graph[0] = {{1, 4}, {2, 1}};
     graph[1] = {{3, 1}};
     graph[2] = {{1, 2}, {3, 5}};
-    for (long long value : dijkstra(graph, 0)) std::cout << value << ' ';
+    for (long long value : dijkstra(graph, 0)) {
+        std::cout << value << ' ';
+    }
     std::cout << '\n';
 }
 ```

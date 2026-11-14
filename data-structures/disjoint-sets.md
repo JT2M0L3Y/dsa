@@ -43,24 +43,40 @@ print(sets.find(0) == sets.find(1))
 class UnionFindExample {
     static class UnionFind {
         int[] parent, size;
+
         UnionFind(int n) {
             parent = new int[n];
             size = new int[n];
-            for (int i = 0; i < n; i++) { parent[i] = i; size[i] = 1; }
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+                size[i] = 1;
+            }
         }
+
         int find(int x) {
-            if (parent[x] != x) parent[x] = find(parent[x]);
+            if (parent[x] != x) {
+                parent[x] = find(parent[x]);
+            }
             return parent[x];
         }
+
         boolean union(int a, int b) {
-            a = find(a); b = find(b);
-            if (a == b) return false;
-            if (size[a] < size[b]) { int t = a; a = b; b = t; }
+            a = find(a);
+            b = find(b);
+            if (a == b) {
+                return false;
+            }
+            if (size[a] < size[b]) {
+                int t = a;
+                a = b;
+                b = t;
+            }
             parent[b] = a;
             size[a] += size[b];
             return true;
         }
     }
+
     public static void main(String[] args) {
         UnionFind sets = new UnionFind(4);
         sets.union(0, 1);
@@ -72,9 +88,9 @@ class UnionFindExample {
 ### C++
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <numeric>
-#include <algorithm>
 #include <vector>
 
 class UnionFind {
@@ -83,14 +99,23 @@ public:
     explicit UnionFind(int n) : parent(n), size(n, 1) {
         std::iota(parent.begin(), parent.end(), 0);
     }
+
     int find(int x) {
-        if (parent[x] != x) parent[x] = find(parent[x]);
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);
+        }
         return parent[x];
     }
+
     bool unite(int a, int b) {
-        a = find(a); b = find(b);
-        if (a == b) return false;
-        if (size[a] < size[b]) std::swap(a, b);
+        a = find(a);
+        b = find(b);
+        if (a == b) {
+            return false;
+        }
+        if (size[a] < size[b]) {
+            std::swap(a, b);
+        }
         parent[b] = a;
         size[a] += size[b];
         return true;

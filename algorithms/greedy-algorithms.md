@@ -62,7 +62,9 @@ class IntervalSchedulingExample {
 std::vector<std::pair<int, int>> select_intervals(
     std::vector<std::pair<int, int>> intervals) {
     std::sort(intervals.begin(), intervals.end(),
-              [](const auto& a, const auto& b) { return a.second < b.second; });
+              [](const auto& a, const auto& b) {
+                  return a.second < b.second;
+              });
     std::vector<std::pair<int, int>> chosen;
     for (auto interval : intervals) {
         if (chosen.empty() || interval.first >= chosen.back().second) {

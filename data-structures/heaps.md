@@ -36,9 +36,13 @@ class HeapExample {
         PriorityQueue<Integer> largest = new PriorityQueue<>(Collections.reverseOrder());
         for (int value : new int[]{8, 2, 5, 1, 7}) {
             largest.add(value);
-            if (largest.size() > 3) largest.remove();
+            if (largest.size() > 3) {
+                largest.remove();
+            }
         }
-        while (!largest.isEmpty()) System.out.print(largest.remove() + " ");
+        while (!largest.isEmpty()) {
+            System.out.print(largest.remove() + " ");
+        }
         System.out.println();
     }
 }
@@ -55,7 +59,9 @@ int main() {
     std::priority_queue<int> largest;
     for (int value : {8, 2, 5, 1, 7}) {
         largest.push(value);
-        if (largest.size() > 3) largest.pop();
+        if (largest.size() > 3) {
+            largest.pop();
+        }
     }
     while (!largest.empty()) {
         std::cout << largest.top() << ' ';

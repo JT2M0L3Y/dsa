@@ -58,18 +58,28 @@ class KmpExample {
     static List<Integer> findAll(String text, String pattern) {
         List<Integer> matches = new ArrayList<>();
         if (pattern.isEmpty()) {
-            for (int i = 0; i <= text.length(); i++) matches.add(i);
+            for (int i = 0; i <= text.length(); i++) {
+                matches.add(i);
+            }
             return matches;
         }
         int[] prefix = new int[pattern.length()];
         for (int i = 1, j = 0; i < pattern.length(); i++) {
-            while (j > 0 && pattern.charAt(i) != pattern.charAt(j)) j = prefix[j - 1];
-            if (pattern.charAt(i) == pattern.charAt(j)) j++;
+            while (j > 0 && pattern.charAt(i) != pattern.charAt(j)) {
+                j = prefix[j - 1];
+            }
+            if (pattern.charAt(i) == pattern.charAt(j)) {
+                j++;
+            }
             prefix[i] = j;
         }
         for (int i = 0, j = 0; i < text.length(); i++) {
-            while (j > 0 && text.charAt(i) != pattern.charAt(j)) j = prefix[j - 1];
-            if (text.charAt(i) == pattern.charAt(j)) j++;
+            while (j > 0 && text.charAt(i) != pattern.charAt(j)) {
+                j = prefix[j - 1];
+            }
+            if (text.charAt(i) == pattern.charAt(j)) {
+                j++;
+            }
             if (j == pattern.length()) {
                 matches.add(i - j + 1);
                 j = prefix[j - 1];
@@ -94,18 +104,28 @@ class KmpExample {
 std::vector<int> find_all(const std::string& text, const std::string& pattern) {
     std::vector<int> matches;
     if (pattern.empty()) {
-        for (int i = 0; i <= static_cast<int>(text.size()); ++i) matches.push_back(i);
+        for (int i = 0; i <= static_cast<int>(text.size()); ++i) {
+            matches.push_back(i);
+        }
         return matches;
     }
     std::vector<int> prefix(pattern.size());
     for (int i = 1, j = 0; i < static_cast<int>(pattern.size()); ++i) {
-        while (j > 0 && pattern[i] != pattern[j]) j = prefix[j - 1];
-        if (pattern[i] == pattern[j]) ++j;
+        while (j > 0 && pattern[i] != pattern[j]) {
+            j = prefix[j - 1];
+        }
+        if (pattern[i] == pattern[j]) {
+            ++j;
+        }
         prefix[i] = j;
     }
     for (int i = 0, j = 0; i < static_cast<int>(text.size()); ++i) {
-        while (j > 0 && text[i] != pattern[j]) j = prefix[j - 1];
-        if (text[i] == pattern[j]) ++j;
+        while (j > 0 && text[i] != pattern[j]) {
+            j = prefix[j - 1];
+        }
+        if (text[i] == pattern[j]) {
+            ++j;
+        }
         if (j == static_cast<int>(pattern.size())) {
             matches.push_back(i - j + 1);
             j = prefix[j - 1];
@@ -115,7 +135,9 @@ std::vector<int> find_all(const std::string& text, const std::string& pattern) {
 }
 
 int main() {
-    for (int index : find_all("ababa", "aba")) std::cout << index << ' ';
+    for (int index : find_all("ababa", "aba")) {
+        std::cout << index << ' ';
+    }
     std::cout << '\n';
 }
 ```

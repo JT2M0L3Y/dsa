@@ -54,20 +54,26 @@ class TrieExample {
 
     static class Trie {
         Node root = new Node();
+
         void insert(String word) {
             Node node = root;
             for (char c : word.toCharArray()) {
                 int index = c - 'a';
-                if (node.children[index] == null) node.children[index] = new Node();
+                if (node.children[index] == null) {
+                    node.children[index] = new Node();
+                }
                 node = node.children[index];
             }
             node.terminal = true;
         }
+
         boolean search(String word) {
             Node node = root;
             for (char c : word.toCharArray()) {
                 node = node.children[c - 'a'];
-                if (node == null) return false;
+                if (node == null) {
+                    return false;
+                }
             }
             return node.terminal;
         }
@@ -96,21 +102,27 @@ struct Node {
 
 class Trie {
     Node root;
+
 public:
     void insert(const std::string& word) {
         Node* node = &root;
         for (char c : word) {
             int index = c - 'a';
-            if (!node->children[index]) node->children[index] = std::make_unique<Node>();
+            if (!node->children[index]) {
+                node->children[index] = std::make_unique<Node>();
+            }
             node = node->children[index].get();
         }
         node->terminal = true;
     }
+
     bool search(const std::string& word) const {
         const Node* node = &root;
         for (char c : word) {
             node = node->children[c - 'a'].get();
-            if (node == nullptr) return false;
+            if (node == nullptr) {
+                return false;
+            }
         }
         return node->terminal;
     }

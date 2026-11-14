@@ -42,11 +42,16 @@ class TreeExample {
     static class Node {
         int value;
         Node left, right;
-        Node(int value) { this.value = value; }
+
+        Node(int value) {
+            this.value = value;
+        }
     }
 
     static void inorder(Node node, List<Integer> result) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
         inorder(node.left, result);
         result.add(node.value);
         inorder(node.right, result);
@@ -76,7 +81,9 @@ struct Node {
 };
 
 void inorder(Node* node, std::vector<int>& result) {
-    if (node == nullptr) return;
+    if (node == nullptr) {
+        return;
+    }
     inorder(node->left, result);
     result.push_back(node->value);
     inorder(node->right, result);
@@ -86,7 +93,9 @@ int main() {
     Node left{1}, right{3}, root{2, &left, &right};
     std::vector<int> result;
     inorder(&root, result);
-    for (int value : result) std::cout << value << ' ';
+    for (int value : result) {
+        std::cout << value << ' ';
+    }
     std::cout << '\n';
 }
 ```
