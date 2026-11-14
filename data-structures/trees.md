@@ -10,7 +10,7 @@ A tree is a connected, acyclic hierarchy. Binary trees have at most two children
 | Search/insert in balanced BST | O(log n) |
 | Search/insert in unbalanced BST | O(n) worst case |
 
-Balanced trees maintain height by rotations or other invariants. A plain BST does not guarantee balance. Use trees for hierarchical data, ordered queries, and recursive decomposition; use a hash table for average constant-time exact-key lookup when order is unnecessary.
+Balanced trees such as AVL and red-black trees maintain height through rotations and balancing invariants. A plain BST does not guarantee balance. Use trees for hierarchical data, ordered queries, and recursive decomposition; use a hash table for average constant-time exact-key lookup when order is unnecessary.
 
 ## Example: in-order traversal
 

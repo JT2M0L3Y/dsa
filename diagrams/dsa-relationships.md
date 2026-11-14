@@ -15,11 +15,12 @@ flowchart LR
         Trie[DS: Trie]
         Fenwick[DS: Fenwick tree]
         Segment[DS: Segment tree]
-        PrefixSearch[Pattern: Prefix search]
     end
     subgraph Patterns[Problem-solving patterns]
         Window[Pattern: Sliding window]
         Prefix[Pattern: Prefix sum]
+        PrefixSearch[Pattern: Prefix search]
+        BitManipulation[Pattern: Bit manipulation]
         BFS[Pattern: Graph BFS / DFS]
         Greedy[Pattern: Greedy]
         DP[Pattern: Dynamic programming]
@@ -49,6 +50,7 @@ flowchart LR
     Binary -->|commonly combines with| Array
     DP -->|frames| Knapsack
     DP -->|frames| TSP
+    BitManipulation -->|encodes subset states for| TSP
     Heap -->|supports frontier selection in| Dijkstra
     Window -->|commonly combines with| Hash
 ```
@@ -89,7 +91,7 @@ flowchart LR
     Items[DS: Array of items] -->|provides choices to| Knapsack[Algorithm: 0/1 knapsack]
     Knapsack -->|uses| DP[Pattern: Dynamic programming]
     Graph[DS: Weighted graph] -->|provides costs to| TSP[Algorithm: Held-Karp TSP]
-    TSP -->|uses subset state from| Bitmask[DS: Bitmask]
+    TSP -->|encodes visited subset as| Bitmask[Pattern: Bitmask state]
     TSP -->|uses| DP
     Choices[Pattern: Backtracking] -->|may be pruned or memoized as| DP
 ```
