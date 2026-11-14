@@ -47,5 +47,9 @@ This page groups the core DSA families so you can think in â€œpattern familiesâ€
 
 ## Related reading
 
+- [Data structures](../data-structures/README.md)
+- [Algorithm catalog](../algorithms/README.md)
+- [System-design interview guide](../system-design/README.md)
+- [Relationship diagrams](../diagrams/README.md)
 - [Back to the pattern index](../README.md)
 - [Bonus advanced algorithms](./bonus-advanced-patterns.md)

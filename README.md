@@ -1,6 +1,13 @@
-# DSA Pattern Guide
+# DSA Interview Guide
 
-This repository organizes the full list of DSA patterns from the [Nexalgotrix guide](https://nexalgotrix.com/all-dsa-patterns#features) with brief explanations and runnable example implementations in Python, Java, and C++.
+This repository organizes interview-preparation material around data structures, algorithms, and problem-solving patterns, with runnable Python, Java, and C++ examples where useful. The original pattern catalog is based on the [Nexalgotrix guide](https://nexalgotrix.com/all-dsa-patterns#features).
+
+## Learning sections
+
+- [Data structures](./data-structures/README.md) — core DSA structures and system-design storage structures.
+- [Algorithms](./algorithms/README.md) — selective interview-focused algorithm families and variations.
+- [System design interviews](./system-design/README.md) — interview approach, building blocks, and worked case studies.
+- [Relationship diagrams](./diagrams/README.md) — Mermaid maps connecting structures, patterns, and algorithms.
 
 ## Pattern Index
 - [Sliding Window](./patterns/sliding-window/README.md)
