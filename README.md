@@ -9,6 +9,10 @@ This repository organizes interview-preparation material around data structures,
 - [System design interviews](./system-design/README.md) — interview approach, building blocks, and worked case studies.
 - [Relationship diagrams](./diagrams/README.md) — Mermaid maps connecting structures, patterns, and algorithms.
 
+## AI assistance
+
+Some content and code in this repository is created with help from GitHub Copilot. AI-assisted commits use a `Co-authored-by` trailer; maintainers review and accept the final changes.
+
 ## Pattern Index
 - [Sliding Window](./patterns/sliding-window/README.md)
 - [Two Pointers](./patterns/two-pointers/README.md)
