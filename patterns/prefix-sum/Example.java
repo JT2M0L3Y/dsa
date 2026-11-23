@@ -1,4 +1,13 @@
 public class Example {
-    public static int rangeSum(int[] nums, int left, int right) { int[] prefix = new int[nums.length + 1]; for (int i = 0; i < nums.length; i++) prefix[i + 1] = prefix[i] + nums[i]; return prefix[right + 1] - prefix[left]; }
-    public static void main(String[] args) { int[] nums = {1, 2, 3, 4, 5}; System.out.println(rangeSum(nums, 1, 3)); }
+    public static int rangeSum(int[] nums, int left, int right) {
+        int[] prefix = new int[nums.length + 1];
+        for (int i = 0; i < nums.length; i++)
+            prefix[i + 1] = prefix[i] + nums[i];
+        return prefix[right + 1] - prefix[left];
+    }
+    
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5};
+        System.out.println(rangeSum(nums, 1, 3));
+    }
 }
